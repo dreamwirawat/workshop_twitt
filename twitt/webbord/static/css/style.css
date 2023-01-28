@@ -1,0 +1,301 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+#col_middle {
+    display: block;
+    background: #F4F4F4;
+}
+
+#col_start,
+#col_end {
+    background: #EBEBEB;
+}
+
+.search {
+    position: relative;
+    width: 450px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    background: #DCDCDC;
+    border-radius: 20px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.search-input {
+    width: 400px;
+    height: 30px;
+    font-size: 18px;
+    background: #DCDCDC;
+    border: none;
+    outline: none;
+
+}
+
+#search_button {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+
+    background: #DCDCDC;
+    cursor: pointer;
+    text-decoration: none;
+    overflow: hidden;
+
+
+}
+
+.post {
+    margin-top: 30px;
+}
+
+#post-box {
+    display: flex;
+
+}
+
+#post-box #profile {
+    margin-left: 20px;
+    max-width: 80px;
+}
+
+.profile {
+    width: 50px;
+    height: 50px;
+    background: #343434;
+    border-radius: 50%;
+}
+
+#post {
+    margin-right: 20px;
+    margin-bottom: 30px;
+}
+
+#post table {
+    display: block;
+}
+
+#like_button {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    margin-top: 10px;
+    background: #F4F4F4;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+#like_button:hover {
+    background: #faddeb;
+}
+
+#like_button ion-icon {
+    color: #666666;
+    --ionicon-stroke-width: 30px;
+}
+
+#like_button ion-icon:hover {
+    color: #ff156b;
+}
+
+.num_like {
+    width: 20px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 13px;
+}
+
+#comment_button {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    margin-top: 10px;
+    background: #F4F4F4;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+#comment_button:hover {
+    background: #dbeafa;
+}
+
+#comment_button ion-icon {
+    color: #666666;
+    --ionicon-stroke-width: 30px;
+}
+
+#comment_button ion-icon:hover {
+    color: #2793f8;
+}
+
+.num_comment {
+    width: 20px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 13px;
+}
+
+#footer {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    background: #2793f8;
+    color: #fff;
+    padding-right: 50px;
+}
+
+.log {
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    background: #2793f8;
+    border-style: solid;
+    border-color: #fff;
+    color: #fff;
+    margin-right: 15px;
+}
+
+.log:hover {
+    background: #2584dc;
+    border-style: solid;
+    border-color: rgb(227, 226, 226);
+}
+
+.regis {
+    width: 70px;
+    height: 40px;
+    border-radius: 20px;
+    background: #ffffff;
+    border: none;
+    color: rgb(0, 0, 0);
+
+}
+
+.regis:hover {
+    background: #eaeaea;
+}
+
+.text {
+    margin-right: 700px;
+}
+
+.modal {
+    color: #000000;
+    font-size: 18px;
+}
+
+.modal-content{
+    padding: 30px;
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 20px !important;
+    -webkit-border: 0px !important;
+    -moz-border: 0px !important;
+    border: 0px !important;
+}
+
+.modal-body{
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.form .input-group {
+    position: relative;
+    margin: 0 0 0 0;
+}
+
+.form .input-group input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #16213E;
+    outline: none;
+    background-color: transparent;
+    color: inherit;
+}
+
+.form .input-group label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: 0.3s ease-out;
+}
+
+.form .input-group input:focus+label,
+.form .input-group input:valid+label {
+    transform: translateY(-18px);
+    color: white;
+    font-size: 0.8rem;
+}
+
+#cancel{
+    width: 80px;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    color: #000000;
+    background: #fff;
+}
+
+#ok{
+    width: 80px;
+    border: none;
+    border-radius: 20px;
+    background: #2793f8;
+}
+
+.text_re{
+    font-size: 14px;
+}
+
+.text_log{
+    font-size: 14px;
+}
+
+.button{
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
