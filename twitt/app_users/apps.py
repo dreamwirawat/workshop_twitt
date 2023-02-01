@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class WebbordConfig(AppConfig):
+class AppUsersConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'webbord'
+    name = 'app_users'

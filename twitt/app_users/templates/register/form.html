@@ -1,0 +1,49 @@
+{% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+        {% endif %}
+<form class="form" action="../users/addUser" method="post">
+    {% csrf_token %}
+    <div class="input-group"> <!-- input username-->
+        <input type="text" name="username" id="loginUser" required />
+        <label for="loginUser">Username</label>
+    </div>
+
+    <div class="input-group"> <!-- input username-->
+        <input type="text" name="first_name" id="loginUser" required />
+        <label for="loginUser">First name</label>
+    </div>
+
+    <div class="input-group"> <!-- input username-->
+        <input type="text" name="last_name" id="loginUser" required />
+        <label for="loginUser">Last name</label>
+    </div>
+
+    <div class="input-group"> <!-- input password-->
+        <input type="email" name="email" id="loginPassword" required />
+        <label for="loginPassword">E-mail</label>
+    </div>
+
+    <div class="input-group"> <!-- input password-->
+        <input type="password" name="password" id="loginPassword" required />
+        <label for="loginPassword">Password</label>
+    </div>
+
+    <div class="input-group"> <!-- input password-->
+        <input type="password" name="repassword" id="loginPassword" required />
+        <label for="loginPassword">Confirm Password</label>
+    </div>
+
+    <div class="text_log">
+        <label for="LOGIN">You already have an account?
+            <a data-bs-toggle="modal" data-bs-target="#LOGIN" data-bs-dismiss="modal"
+                class="tooltip-test" title="เข้าสู่ระบบ" type="button"> เข้าสู่ระบบ</a>
+        </label>
+    </div>
+    <div class="button" style="display: flex; justify-content: center;">
+        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal"
+            style="margin-right: 20px;">ยกเลิก</button>
+        <button type="submit" id="ok" class="submit-btn btn btn-primary">ยืนยัน</button>
+    </div>
+</form>

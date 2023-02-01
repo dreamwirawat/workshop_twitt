@@ -6,23 +6,29 @@
 }
 
 html {
+
     scroll-behavior: smooth;
 }
 
-.container {
-    position: relative;
-    display: flex;
-    justify-content: center;
+.logo img{
+    position: absolute;
+    width: 170px;
+    margin-left: 10px;
 }
 
-#col_middle {
-    display: block;
+.setting_button{
+    position: absolute;
+    margin-left: 90%;
+    margin-top: 40px;
+}
+
+.box {
+    
+    width: 70vw;
+    margin: auto;
     background: #F4F4F4;
-}
-
-#col_start,
-#col_end {
-    background: #EBEBEB;
+    text-align: center;
+    padding: 20px;
 }
 
 .search {
@@ -64,10 +70,6 @@ html {
 
 }
 
-.post {
-    margin-top: 30px;
-}
-
 #post-box {
     display: flex;
 
@@ -85,10 +87,6 @@ html {
     border-radius: 50%;
 }
 
-#post {
-    margin-right: 20px;
-    margin-bottom: 30px;
-}
 
 #post table {
     display: block;
@@ -176,7 +174,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: end;
-    background: #2793f8;
+    background: #eac679;
     color: #fff;
     padding-right: 50px;
 }
@@ -185,7 +183,7 @@ html {
     width: 100px;
     height: 40px;
     border-radius: 20px;
-    background: #2793f8;
+    background: #eac679;
     border-style: solid;
     border-color: #fff;
     color: #fff;
@@ -193,7 +191,7 @@ html {
 }
 
 .log:hover {
-    background: #2584dc;
+    background: #d0b478;
     border-style: solid;
     border-color: rgb(227, 226, 226);
 }
@@ -221,7 +219,7 @@ html {
     font-size: 18px;
 }
 
-.modal-content{
+.modal-content {
     padding: 30px;
     -webkit-border-radius: 0px !important;
     -moz-border-radius: 0px !important;
@@ -231,7 +229,7 @@ html {
     border: 0px !important;
 }
 
-.modal-body{
+.modal-body {
     margin-top: 20px;
     margin-left: 50px;
     margin-right: 50px;
@@ -272,7 +270,7 @@ html {
     font-size: 0.8rem;
 }
 
-#cancel{
+#cancel {
     width: 80px;
     border: 1px solid #000000;
     border-radius: 20px;
@@ -280,22 +278,51 @@ html {
     background: #fff;
 }
 
-#ok{
+#cancel:hover {
+    background: #eae9e9;
+}
+
+#ok {
     width: 80px;
     border: none;
     border-radius: 20px;
-    background: #2793f8;
+    background: #eac679;
 }
 
-.text_re{
+#ok:hover {
+    background: #d4b779;
+}
+
+.text_re {
     font-size: 14px;
 }
 
-.text_log{
+.text_log {
     font-size: 14px;
 }
 
-.button{
+.button {
     margin-top: 30px;
     margin-bottom: 10px;
+}
+
+.setting_button a {
+    margin-left: 5px;
+}
+
+.setting {
+    width: 90px;
+    height: 40px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: #2B2B2B;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.setting:hover {
+    background: #343434;
 }
