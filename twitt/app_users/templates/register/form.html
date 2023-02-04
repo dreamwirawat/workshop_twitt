@@ -3,7 +3,7 @@
         <div class="alert alert-{{ message.tags }}">{{ message }}</div>
         {% endfor %}
         {% endif %}
-<form class="form" action="../users/addUser" method="post">
+<form class="form" action="../addUser" method="post">
     {% csrf_token %}
     <div class="input-group"> <!-- input username-->
         <input type="text" name="username" id="loginUser" required />

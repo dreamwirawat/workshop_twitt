@@ -3,6 +3,13 @@ from django.contrib.auth.models import User,auth
 from django.contrib.auth.decorators import login_required
 from django.contrib    import messages
 from django.http import HttpRequest,HttpResponseRedirect
+from django.contrib.auth import logout
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('users/')
+
 
 
 
@@ -30,11 +37,11 @@ def addUser(request):
         if User.objects.filter(username=username).exists():
                 messages.info(request,'Username exists')
                 print("Username exists")
-                return redirect('/')
+                return redirect('../users')
         elif User.objects.filter(email=email).exists():
                 print("Email exists")
                 messages.info(request,'Email exists')
-                return redirect('/')
+                return redirect('../users')
         else :
             user=User.objects.create_user(
                 username=username,
@@ -47,7 +54,7 @@ def addUser(request):
             return redirect('home')
     else  :
         messages.info(request,'password is not matched')
-        return render (request,"frontend/home.html")
+        return redirect('../users')
     
 
 # login page 
@@ -79,3 +86,10 @@ def logout (request):
 @login_required
 def SuccessLogin(request: HttpRequest):
      return render (request,"frontend/home.html" )
+
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('/users')
+
