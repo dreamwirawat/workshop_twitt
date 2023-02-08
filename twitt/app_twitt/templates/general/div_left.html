@@ -1,0 +1,51 @@
+{% load static %}
+
+ <!-------------------------------------กล่องซ้าย รวมพวกโลโก้ แถบเมนู--------------------------------->
+ <div class="box_left" style="width: 20%;">
+
+    <!--โลโก้-->
+    <div class="logo">
+        <img src="{% static 'images/logo.png' %}" alt="">
+    </div>
+
+    <!--แถบเมนู รวมพวกปุ่มต่างๆ เช่น โปรไฟล์ ตั้งค่า-->
+    <div id="menu" class="col" align="center">
+
+        <!--username-->
+        <div id="show_name" class="row">
+            <b>{{ user.username }}</b>
+        </div>
+
+        <!--ปุ่มโปรไฟล์-->
+        <div id="show_profile" class="row">
+            <a href="../template/profile.html">
+                <button type="button" class="profile_button">
+                    <ion-icon name="person-outline"></ion-icon>
+                    โปรไฟล์
+                </button>
+            </a>
+        </div>
+
+        <!--ปุ่มตั้งค่า-->
+        <div id="show_setting" class="row">
+            <a href="../template/setting.html">
+                <button type="button" class="setting_button">
+                    <ion-icon name="settings-outline"></ion-icon>
+                    ตั้งค่า
+                </button>
+            </a>
+        </div>
+
+        <!--ปุ่มออกจากระบบ-->
+        <div id="show_logout" class="row">
+            <a href="{% url 'logout' %}">
+                <button type="button" class="logout_button">
+                    <ion-icon name="log-out-outline"></ion-icon>
+                    ออกจากระบบ
+                </button>
+            </a>
+        </div>
+    </div>
+
+</div>
+<!---------------------------------------ปิดกล่องซ้าย------------------------------------------------>

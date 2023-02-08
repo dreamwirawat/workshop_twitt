@@ -5,6 +5,7 @@ from django.contrib    import messages
 from django.http import HttpRequest,HttpResponseRedirect
 from django.contrib.auth import logout
 
+from app_post.models import Post,Sex,Tag,PostTag
 
 def logout_view(request):
     logout(request)
@@ -18,7 +19,18 @@ def logout_view(request):
 
 # ToExplore page
 def ToExplore(request):
-    return render (request,"registration/login.html")
+    posts=Post.objects.all().order_by('-date_time')
+    sex=Sex.objects.all()
+    trends=Tag.objects.all().order_by('-value')[:3]
+    PostTags = PostTag.objects.all()
+    return render (request,"registration/login.html",{
+        'posts':posts,
+        'sex':sex,
+        'PostTags':PostTags,
+        'trends':trends
+
+    })
+   
 
 #home
 def home(request):
@@ -75,12 +87,12 @@ def login(request):
        return redirect('home')
     else :
         messages.info(request,'ไม่พบข้อมูล')
-        return redirect ('/')
+        return redirect ('../users')
 
 # function login
-def logout (request):
-    auth.logout(request)
-    return redirect('/')
+def logout_view (request):
+    logout(request)
+    return redirect('../users')
 
 #SuccessLogin
 @login_required

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 {% load static %}
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -45,36 +46,47 @@
             <hr>
 
             <!-----กล่องแสดงโพสของแต่ละ user------>
+            {% for post in posts %}
             <div id="post-box" class="row">
-
                 <!--รูปโปรไฟล์-->
                 <div id="profile" class="card">
                     <img src="">
                 </div>
 
                 <div id="post" class="col" align="start">
-
+                
                     <!--ชื่อของผู้ใช้งาน-->
                     <div class="name">
-                        <b>Username</b>
+                        <b>{{post.user}}</b>
+                        <br><p>{{post.date_time}}</p>
                     </div>
 
                     <!--ช่องสำหรับโชว์ tag-->
                     <div id="tag" class="input-group">
-
+                        {% for post_tag in post.posttag_set.all %}
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="tag_">#</span>
+                            <span class="input-group-text" id="tag_">#{{post_tag.tag.tag_content}}</span>
                         </div>
-
+                        {% endfor %}
                         <!--สำหรับแสดงค่า-->
                         <input type="text" id="show_tag" class="form-control">
 
                     </div>
-
+                    {% if post.image == "" %}
                     <!--โพสของผู้ใช้งาน ช่อง textarea สำหรับรับค่าที่โพส มาแสดง-->
                     <div class="post">
-                        <textarea type="text" class="post_"></textarea>
+                        <textarea type="text" class="post_">{{post.content}}</textarea>
                     </div>
+                    {% else %}
+                    <!--โพสของผู้ใช้งาน ช่อง textarea สำหรับรับค่าที่โพส มาแสดง-->
+                    <div class="post">
+                        <textarea type="text" class="post_">{{post.content}}</textarea>
+                    </div>
+                    <!--รูปโพสของผู้ใช้งาน ช่อง textarea สำหรับรับค่าที่โพส มาแสดง-->
+                    <div class="post">
+                        <img src="{{post.image.url}}">
+                    </div>
+                    {% endif %}
 
                     <!--การกดไลค์และแสดงความคิดเห็น-->
                     <div id="activity" class="row" style="width: 22%;">
@@ -87,7 +99,7 @@
                         </div>
 
                         <!--input สำหรับแสดงจำนวนไลค์-->
-                        <div id="num_like" class="col">
+                        <div id="num_like" class="col" >
                             <input type="text" class="num_l"></input>
                         </div>
 
@@ -109,7 +121,7 @@
 
             <!--เส้นขีด-->
             <hr>
-
+            {% endfor %}
         </div>
 
         <!---------------------------กล่องขวา--------------------------->
@@ -119,26 +131,22 @@
 
                 <!--หัวข้อ-->
                 <div class="col">
-                    <b>Trends for you</b>
+                    <b>The trend of เต๋อ</b>
                 </div>
 
                 <!--เส้นขีด-->
                 <hr>
 
+                
                 <!--trends ที่ขึ้นแนะนำ-->
                 <div id="trends" class="col" align="start">
+        
                     <div class="trend_1">
-                        <a href="">#ความรัก</a>
+                        <a href="">{{trend.tag_content}}</a>
+                       
                     </div>
                     <hr>
-                    <div class="trend_2">
-                        <a href="">#ทั่วไป</a>
-                    </div>
-                    <hr>
-                    <div class="trend_3">
-                        <a href="">#การงาน</a>
-                    </div>
-                    <hr>
+               
                 </div>
 
             </div>

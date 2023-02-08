@@ -1,0 +1,29 @@
+{% load humanize %}
+<!-------------------------กล่องขวา พวก trends แนะนำ--------------------------->
+<div class="box_right" style="width: 20%;" align="center">
+
+    <div id="box" class="col">
+
+        <!--หัวข้อ-->
+        <div class="col">
+            <b>The trend of เต๋อ</b>
+        </div>
+
+        <!--เส้นขีด-->
+        <hr>
+
+        {% for trend in trends %}
+        <!--trends ที่ขึ้นแนะนำ-->
+        <div id="trends" class="col" align="start">
+
+            <div class="trend_1">
+                <a href="">#{{trend.tag_content}}</a>
+                <p> {{trend.value | intcomma }} เต๋อ</p>
+            </div>
+            <hr>
+        {% endfor %}
+        </div>
+
+    </div>
+</div>
+<!--------------------------------ปิดกล่องขวา------------------------------------>

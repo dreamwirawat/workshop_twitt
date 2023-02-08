@@ -28,6 +28,8 @@ urlpatterns = [
     
     path('',include("app_users.urls")),
 
+    path('', include('app_users.urls')),
+
     path('home/',include("app_twitt.urls")),
 
 

@@ -1,0 +1,39 @@
+  <!--form รับค่า การเขียนโพส-->
+  <div id="status_post" class="row">
+
+    <!--รูปโปรไฟล์-->
+    <div id="profile_" class="card">
+        <img src="">
+    </div>
+
+    <!-- form -->
+    <form id="write_post" class="col" align="start" action="{% url 'create_post' %}" method="post" >
+        {% csrf_token %}
+        <!--ชื่อผู้ใช้งาน-->
+        <div class="name">
+            <b>{{ user.username }} </b>
+        </div>
+        <!--ช่องสำหรับเขียน tag-->
+        <div id="tag" class="input-group">
+
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="tag_" >#</span>
+            </div>
+            <!--ช่องรับค่า tag-->
+
+            <input type="text" id="tagg_" class="form-control" placeholder="--หัวข้อ--" name="tag"> 
+            <input type="file" id="id_image" multiple name="files">
+        </div>
+          
+        <!--ช่องสำหรับเขียนโพส ( textarea รับค่า )-->
+        <div class="post">
+            <textarea type="text" placeholder="คุณกำลังคิดอะไรอยู่" name="newpost"></textarea>
+        </div>
+
+        <!--ปุ่มโพส-->
+        <div class="post_button" align="end">
+            <button class="post_" type="submit">เต๋อ</button>
+        </div>
+
+    </form>
+</div>

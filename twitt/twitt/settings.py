@@ -38,9 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     'twitt',
     'app_users',
     'app_twitt',
+    'app_post',
 ]
 
 MIDDLEWARE = [
@@ -80,9 +82,10 @@ WSGI_APPLICATION = 'twitt.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'twitt_test',
-        'USER':'root',
-        'PASSWORD':''
+        'NAME': 'twitt_toe',
+        'HOST': '34.87.30.13',
+        'USER': 'root',
+        'PASSWORD': 'Ops2022',
     }
 }
 
